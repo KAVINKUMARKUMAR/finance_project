@@ -1,0 +1,185 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: "Sriracha", cursive;
+    font-weight: 100;
+    font-style: normal;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    nav{
+        width: 100vw;
+        height: 100px;
+        background-color: aqua;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 580px;
+        box-shadow: 6px 6px 6px 2px rgba(74, 69, 69, 0.352);
+        .logo{
+            h1{
+                font-size: 30px;
+            }
+        }
+        .navbar{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        a{
+            position: relative;
+        }
+        a::after{
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: purple;
+            transition: width 0.3s ease;
+        }
+        a:hover::after{
+            width: 100%;
+        }
+        a:hover{
+            color: purple;
+        }
+    }
+}
+.contat{
+    width: 90%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cont_form{
+    width: 90%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    width: 100%;
+    height: 680px;
+    display: flex;
+    background-color: rgb(39, 53, 91);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .foot{
+        width: 90%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        /* background-color: brown; */
+        gap: 70px;
+        padding-top: 70px;
+        .foot_logo{
+            width: 25%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-top: 30px;
+            .foot_log{
+                h1{
+                    color: white;
+                }
+                h2{
+                    color: white;
+                }
+            }
+            .foot_name{
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                h4{
+                    color: white;
+                }
+                h5{
+                    color: white;
+                }
+            }
+        }
+        .quick{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            b{
+                color: white;
+            }
+            .quicks{
+                display:flex ;
+                flex-direction: column;
+                gap: 10px;
+                a{
+                    text-decoration: none;
+                    color: rgb(209, 206, 206);
+                }
+            }
+        }
+        .documents{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            b{
+                color: white;
+            }
+            .doc{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                a{
+                    text-decoration: none;
+                    color: rgb(209, 206, 206);
+                }
+            }
+        }
+        .office_hour{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            b{
+                color: white;
+            }
+            .office{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                p{
+                    color: rgb(209, 206, 206);
+                }
+            }
+            .cont{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                p{
+                    color: rgb(209, 206, 206);
+                }
+            }
+        }
+        
+    }
+    .copy{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: black;
+    }
+}

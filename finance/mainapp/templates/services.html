@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+Services
+{% endblock %}
+{% block content %}
+<div style="width:100%; display:flex; align-items: center;flex-direction: column; " data-aos="fade-up">
+    <div class="servies">
+        <h1>Our Servies</h1>
+        <p>Explore a range of tailored solutions designed to meet your financial needs and help you achieve your goals With confidence.</p>
+    </div>
+</div>
+<div style="width:100%; display:flex; align-items: center;flex-direction: column; " data-aos="fade-up">
+    <div class="ser_cards">
+        <div class="ser_card">
+            {% for box in Boxes %}
+                <div style="width:100%; display:flex; align-items: center;flex-direction: column; " data-aos="fade-up">
+                    <div class="ser_car">
+                        <div class="ser_ca">
+                            <img src="{{box.img.url}}" alt="">
+                        </div>
+                        <div class="ser_c">
+                            <h3>{{box.name}}</h3>
+                            <p>{{box.abo}}</p>
+                            <p>{{box.desc}}</p>
+                            <a href="">Download</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>  
+</div>
+{% endblock %}
