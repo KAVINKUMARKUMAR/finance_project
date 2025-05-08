@@ -26,6 +26,18 @@ def contactView(request):
     context = {
     }
     return render(request, 'contact.html', context)
+def DisclaimerView(request):
+    context = {
+    }
+    return render(request, 'disclaimer.html', context)
+def PolicyView(request):
+    context = {
+    }
+    return render(request, 'policy.html', context)
+def TermView(request):
+    context = {
+    }
+    return render(request, 'term.html', context)
 
 class Contact(CreateView):
     model = Contact

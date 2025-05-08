@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}finance{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Italianno&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playwrite+CU:wght@100..400&family=Sriracha&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
 </head>
 <body>
     <nav>
@@ -47,9 +48,9 @@
                     <a href="{% url 'servies' %}">Our Services</a>
                     <a href="{% url 'calculator' %}">Calculators</a>
                     <a href="{% url 'contact' %}">Contact Us</a>
-                    <a href="{% url 'home' %}">Disclaimer</a>
-                    <a href="">Privacy Policy</a>
-                    <a href="">Terms and Conditions</a>
+                    <a href="{% url 'disclaimer' %}">Disclaimer</a>
+                    <a href="{% url 'policy' %}">Privacy Policy</a>
+                    <a href="{% url 'terms' %}">Terms and Conditions</a>
                 </div>
             </div>
             <div class="documents">
@@ -75,14 +76,14 @@
                 </div>
                 <div class="cont">
                     <b>CONTACT</b>
-                    <P>Phone: +61 466 963 131</P>
-                    <P>Email: nick@kiwifinance.com.au</P>
+                    <P>Phone: +91 8110 990 220</P>
+                    <P>Email: kavin.com.au</P>
                 </div>
             </div>
         </div>
         <p style="color: white; padding-bottom: 10px; margin-top: 30px;">Kiwi Finance Pty Ltd is a registered credit representative (CRN #555861) of Astute Financial Management Pty Ltd - Australian Credit Licence Number 364253</p>
         <div class="copy">
-            <p>Copyright © 2023-2025 Kiwi Finance Pty Ltd. Powered by ASTUTE. Website Designed & Developed by Kavin</p>
+            <p>Copyright © 2023-2025 Kiki Finance Pty Ltd. Powered by ASTUTE. Website Designed & Developed by Kavin</p>
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
