@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}
 Services
 {% endblock %}
@@ -22,7 +24,7 @@ Services
                             <h3>{{box.name}}</h3>
                             <p>{{box.abo}}</p>
                             <p>{{box.desc}}</p>
-                            <a href="">Download</a>
+                            <a href="{% static 'pdf/kavin_cv_(11).pdf' %}" download>Download</a>
                         </div>
                     </div>
                 </div>

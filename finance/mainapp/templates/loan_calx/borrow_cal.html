@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Borrowing Power Calculator
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Borrowing Power Calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Borrowing Power Calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Monthly Income (₹):</label>
+                            <label>Monthly Expenses (₹):</label>
+                            <label>Expected Interest Rate (%):</label>
+                            <label>Loan Tenure (Years):</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="income" required><br><br>
+                            <input type="number" name="expenses" required><br><br>
+                            <input type="number" name="interest_rate" required><br><br>
+                            <input type="number" name="tenure" required><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if borrow_power %}
+                <h3>📊 Result:</h3>
+                <p>Affordable Monthly EMI (60% Rule): ₹{{ monthly_emi_afford }}</p>
+                <p><strong>Estimated Borrowing Power: ₹{{ borrow_power }}</strong></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

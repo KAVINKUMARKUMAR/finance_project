@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Rent vs Buy calculator
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Rent vs Buy calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Rent vs Buy calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Home Price (₹):</label>
+                            <label>Loan Tenure (Years):</label>
+                            <label>Interest Rate (%):</label>
+                            <label>Annual Property Rate (%):</label>
+                            <label>Annual Maintain Cost (₹):</label>
+                            <label>Monthly Rent (₹):</label>
+                            <label>Annual Rent Increase Rate (%):</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="home_price" required><br><br>
+                            <input type="number" name="loan_years" required><br><br>
+                            <input type="number" step="0.01" name="interest_rate" required><br><br>
+                            <input type="number" step="0.01" name="property_tax_rate" required><br><br>
+                            <input type="number" name="maintenance_cost" required><br><br>
+                            <input type="number" name="rent_per_month" required><br><br>
+                            <input type="number" step="0.01" name="rent_increase_rate" required><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if total_buy_cost %}
+                <h3>💡 Results:</h3>
+                <p>Monthly EMI: ₹{{ emi }}</p>
+                <p>Total Buying Cost (EMI + Taxes + Maintenance): ₹{{ total_buy_cost }}</p>
+                <p>Total Rent Paid Over {{ loan_years }} Years: ₹{{ total_rent }}</p>        
+                {% if total_buy_cost > total_rent %}
+                <p style="color:red;">⚠️ Renting is cheaper by ₹{{ difference|floatformat:2 }}</p>
+                {% else %}
+                <p style="color:green;">✅ Buying is better by ₹{{ difference|floatformat:2 }}</p>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

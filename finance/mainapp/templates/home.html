@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
 Home
 {% endblock %}
@@ -7,8 +8,8 @@ Home
     <div class="h_abouta">
         <div class="h_about">
             <div class="h_abou">
-                <h1>KIKI FINANCE: Turning your financial goals into reality</h1>
-                <p>your trusted partners in home loans,business loans, business loans, car loans, asset finance, commercial</p>
+                <h1>NAVI FINANCE: Turning your financial goals into reality</h1>
+                <p>your trusted partners in home loans,business loans, car loans, asset finance, commercial</p>
                 <a href="{% url 'contact' %}">Request a call back</a>
             </div>
             <div class="h_abo">
@@ -49,7 +50,7 @@ Home
                 <div class="home_c">
                     <h3>Why Choose a Broker Guide</h3>
                     <p>Discover the benefits of working with a broker to secure the best financial solutions tailored to your needs.</p>
-                    <a href="">Download</a>
+                    <a href="{% static 'pdf/kavin_cv_(11).pdf' %}" download>Download</a>
                 </div>
             </div>
         </div>
@@ -61,7 +62,7 @@ Home
                 <div class="home_c">
                     <h3>First Home Buyer Guide</h3>
                     <p>Step-by-step guidance to make your first home-buying experience seamless and stress-free.</p>
-                    <a href="">Download</a>
+                    <a href="{% static 'pdf/kavin_cv_(11).pdf' %}" download>Download</a>
                 </div>
             </div>
         </div>
@@ -73,7 +74,7 @@ Home
                 <div class="home_c">
                     <h3>Refinance Guide</h3>
                     <p>Learn how refinancing can save you money, reduce your loan term, or unlock equity.</p>
-                    <a href="">Download</a>
+                    <a href="{% static 'pdf/kavin_cv_(11).pdf' %}" download>Download</a>
                 </div>
             </div>
         </div>
@@ -84,8 +85,8 @@ Home
                 </div>
                 <div class="home_c">
                     <h3>Property Investment Guide</h3>
-                    <p>Essential strategies to maximize your returns and build a strong property p.</p>
-                    <a href="">Download</a>
+                    <p>Essential strategies to maximize your returns and build a strong property.</p>
+                    <a href="{% static 'pdf/kavin_cv_(11).pdf' %}" download>Download</a>
                 </div>
             </div>
         </div>
@@ -97,7 +98,7 @@ Home
                 <div class="home_c">
                     <h3>Business Finance Guide</h3>
                     <p>Smart financial strategies to help grow your business and achieve long-term</p>
-                    <a href="">Download</a>
+                    <a href="{% static 'pdf/kavin_cv_(11).pdf' %}" download>Download</a>
                 </div>
             </div>
         </div>

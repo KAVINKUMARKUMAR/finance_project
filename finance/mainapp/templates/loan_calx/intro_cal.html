@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Introductory rate loan calculator
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Introductory rate loan calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Introductory rate loan calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Loan Amount (₹):</label>
+                            <label>Introductory Interest (%):</label>
+                            <label>Introductory Period (years):</label>
+                            <label>Regular Interest Rate (%):</label>
+                            <label>Total Loan Term (years):</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="principal" step="0.01" required><br><br>
+                            <input type="number" name="intro_rate" step="0.01" required><br><br>
+                            <input type="number" name="intro_period" required><br><br>
+                            <input type="number" name="regular_rate" step="0.01" required><br><br>
+                            <input type="number" name="loan_term" required><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if result %}
+                    {% if result.error %}
+                        <p style="color:red;">{{ result.error }}</p>
+                    {% else %}
+                        <h3>📊 Results:</h3>
+                        <ul>
+                            <li><strong>Introductory EMI (₹):</strong> {{ result.intro_emi|floatformat:2 }}</li>
+                            <li><strong>EMI after Intro Period (₹):</strong> {{ result.regular_emi|floatformat:2 }}</li>
+                            <li><strong>Total Interest Paid (₹):</strong> {{ result.total_interest|floatformat:2 }}</li>
+                            <li><strong>Total Repayment Amount (₹):</strong> {{ result.total_payment|floatformat:2 }}</li>
+                        </ul>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

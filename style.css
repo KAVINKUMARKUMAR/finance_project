@@ -207,3 +207,62 @@ footer{
         }
     }
 }
+.loan_repay{
+    width: 100%;
+    height: 100px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loan_repa{
+    width: 500px;
+    height: 600px;
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    .loan_rep{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        .loan_line{
+            width: 100%;
+            height: 1px;
+            background-color: gray;
+            border-radius: 20px;
+        }
+    }
+    .loan_re{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: blueviolet;
+        .call{
+            width: 400px;
+            height: 100%;
+            display: flex;
+            background-color: brown;
+            .lab{
+                display: flex;
+                background-color: aqua;
+                width: 50%;
+                padding-top: 10px;
+                flex-direction: column;
+                gap: 30px;
+            }
+            .inp{
+                width: 50%;
+                padding-top: 10px;
+                input{
+                    width: 190px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

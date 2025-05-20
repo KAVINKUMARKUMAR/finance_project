@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Loan Repayment
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Loan repayment Calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Loan repayment Calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Loan Amount (₹):</label>
+                            <label>Interest Rate (Annual %):</label>
+                            <label>Loan Tenure (Years):</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="principal" required><br><br>
+                            <input type="number" name="rate" step="0.01" required><br><br>
+                            <input type="number" name="tenure" required><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if emi %}
+                    <h3>Monthly EMI: ₹{{ emi }}</h3>
+                    <p>Total Payment: ₹{{ total_payment }}</p>
+                    <p>Total Interest: ₹{{ total_interest }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

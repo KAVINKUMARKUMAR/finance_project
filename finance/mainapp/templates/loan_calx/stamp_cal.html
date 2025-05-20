@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Stamp duty Calculator
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Stamp duty Calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Stamp duty Calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Property Value (₹):</label>
+                            <label>Location:</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="property_value" step="0.01" required><br><br>
+                            <select name="location" required>
+                                <option value="">-- Select State --</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Delhi">Delhi</option>
+                            </select><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if stamp_duty %}
+                    <h3>🧾 Result</h3>
+                    <p>Property Value: ₹{{ property_value }}</p>
+                    <p>Location: {{ location }}</p>
+                    <p>Stamp Duty Rate: {{ rate }}%</p>
+                    <p><strong>Total Stamp Duty: ₹{{ stamp_duty }}</strong></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

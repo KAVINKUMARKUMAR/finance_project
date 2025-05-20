@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Lump Sum Repayment Calculator
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Lump Sum Repayment Calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Lump Sum Repayment Calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Loan Amount (₹):</label>
+                            <label>Interest Rate (Annual %):</label>
+                            <label>Loan Tenure (Years):</label>
+                            <label>Lump Sum Payment (₹):</label>
+                            <label>Month to Pay Lump Sum:</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="principal" required><br><br>
+                            <input type="number" name="rate" step="0.01" required><br><br>
+                            <input type="number" name="tenure" required><br><br>
+                            <input type="number" name="lump_sum" required><br><br>
+                            <input type="number" name="lump_month" required><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if emi %}
+                <h3>📊 Results:</h3>
+                <p>Monthly EMI: ₹{{ emi }}</p>
+                <p>Original Loan Term: {{ original_term }} months</p>
+                <p>New Loan Term (after Lump Sum): {{ new_term }} months</p>
+                <p>Months Saved: {{ months_saved }}</p>
+                <p>Total Interest after Lump Sum: ₹{{ new_interest }}</p>
+                <p><strong>Interest Saved: ₹{{ interest_saved }}</strong></p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

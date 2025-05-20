@@ -305,8 +305,11 @@ footer{
                 gap: 10px;
                 a{
                     text-decoration: none;
-                    color: rgb(209, 206, 206);
+                    color: rgb(150, 150, 150);
                 }
+            }
+            .docu:hover{
+                color: white;
             }
         }
         .documents{
@@ -324,8 +327,11 @@ footer{
                 gap: 10px;
                 a{
                     text-decoration: none;
-                    color: rgb(209, 206, 206);
+                    color: rgb(150, 150, 150);
                 }
+            }
+            .docum:hover{
+                color: white;
             }
         }
         .office_hour{
@@ -342,7 +348,7 @@ footer{
                 flex-direction: column;
                 gap: 20px;
                 p{
-                    color: rgb(209, 206, 206);
+                    color: rgb(150, 150, 150);
                 }
             }
             .cont{
@@ -703,6 +709,73 @@ button {
         }
         ul{
             margin-left: 50px;
+        }
+    }
+}
+.loan_repay{
+    width: 100%;
+    height: 100px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loan_repa{
+    width: 500px;
+    height: auto;
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 30px;
+    border-radius: 10px;
+    .loan_rep{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        .loan_line{
+            width: 90%;
+            height: 1px;
+            background-color: gray;
+            border-radius: 20px;
+        }
+    }
+    .loan_re{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: blueviolet; */
+        .bu{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .call{
+            width: 400px;
+            height: 80%;
+            display: flex;
+            /* background-color: brown; */
+            .lab{
+                display: flex;
+                /* background-color: aqua; */
+                width: 50%;
+                padding-top: 10px;
+                flex-direction: column;
+                gap: 30px;
+            }
+            .inp{
+                width: 50%;
+                padding-top: 10px;
+                input{
+                    width: 190px;
+                    border-radius: 5px;
+                    border: none;
+                }
+            }
         }
     }
 }

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Income tax calculator
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Income tax calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Income tax calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Enter Annual Income (₹):</label>
+                            <label>Select Tax Regime:</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" step="0.01" name="income" required><br><br>
+                            <input type="radio" name="regime" value="old" required> Old Regime<br>
+                            <input type="radio" name="regime" value="new"> New Regime<br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if tax_amount %}
+                    <h3>💡 Result:</h3>
+                    <p>Your tax liability under <strong>{{ regime|title }} Regime</strong> is: ₹{{ tax_amount|floatformat:2 }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

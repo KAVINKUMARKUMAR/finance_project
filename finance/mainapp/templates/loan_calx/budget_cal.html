@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Budget planner
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Budget planner</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Budget planner</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Monthly Income (₹):</label>
+                            <label>Housing (₹):</label>
+                            <label>Food (₹):</label>
+                            <label>Transportation (₹):</label>
+                            <label>Utilities (₹):</label>
+                            <label>Entertainment (₹):</label>
+                            <label>Other Expenses (₹):</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="income" step="0.01" ><br><br>
+                            <input type="number" name="housing" step="0.01" ><br><br>
+                            <input type="number" name="food" step="0.01" ><br><br>
+                            <input type="number" name="transportation" step="0.01" ><br><br>
+                            <input type="number" name="utilities" step="0.01" ><br><br>
+                            <input type="number" name="entertainment" step="0.01" ><br><br>
+                            <input type="number" name="others" step="0.01" ><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if income %}
+                    <h3>💡 Results:</h3>
+                    <p><strong>Total Income:</strong> ₹{{ income }}</p>
+                    <p><strong>Total Expenses:</strong> ₹{{ expenses }}</p>
+                    <p>
+                        <strong>Balance:</strong> 
+                        {% if balance >= 0 %}
+                            <span style="color:green;">₹{{ balance|floatformat:2 }} (Savings)</span>
+                        {% else %}
+                            <span style="color:red;">₹{{ balance|floatformat:2 }} (Over budget)</span>
+                        {% endif %}
+                    </p>
+                
+                    <h4>🧾 Breakdown:</h4>
+                    <ul>
+                        {% for category, amount in details.items %}
+                            <li>{{ category }}: ₹{{ amount }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

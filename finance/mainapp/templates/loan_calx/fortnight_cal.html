@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Fortnightly repayment calculator
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Fortnightly repayment calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Fortnightly repayment calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Loan Amount (₹):</label>
+                            <label>Interest Rate (Annual %):</label>
+                            <label>Loan Term (years):</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="principal" step="0.01" required><br><br>
+                            <input type="number" name="annual_rate" step="0.01" required><br><br>
+                            <input type="number" name="loan_term" required><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if result %}
+                    {% if result.error %}
+                        <p style="color:red;">{{ result.error }}</p>
+                    {% else %}
+                        <h3>📊 Results:</h3>
+                        <ul>
+                            <li><strong>Fortnightly Repayment (₹):</strong> {{ result.repayment|floatformat:2 }}</li>
+                            <li><strong>Total Repayment Amount (₹):</strong> {{ result.total_payment|floatformat:2 }}</li>
+                            <li><strong>Total Interest Paid (₹):</strong> {{ result.total_interest|floatformat:2 }}</li>
+                        </ul>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

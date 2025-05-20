@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Interest-only mortgage calculator
+{% endblock %}
+{% block content %}
+    <div class="loan_repay">
+        <h1>Interest-only mortgage calculator</h1>
+    </div>
+    <div class="loan_repa">
+        <div class="loan_rep">
+            <h3>Interest-only mortgage calculator</h5>
+            <div class="loan_line">
+            </div>
+            <h3>Enter your detials</h4>
+            <div class="loan_line">
+            </div>
+            <div class="loan_re">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="call">
+                        <div class="lab">
+                            <label>Loan Amount (₹):</label>
+                            <label>Annual Interest Rate (%):</label>
+                            <label>Loan Tenure (Years):</label>
+                        </div>
+                        <div class="inp">
+                            <input type="number" name="principal" required><br><br>
+                            <input type="number" name="rate" step="0.01" required><br><br>
+                            <input type="number" name="tenure" required><br><br>
+                        </div>
+                    </div>
+                    <div class="bu">
+                        <button type="submit">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            <h3 style="margin-top:20px;">View your results</h4>
+            <div class="loan_line">
+            </div>
+            <div class="cal_loan">
+                {% if interest_only_payment %}
+                <h3>📊 Results:</h3>
+                <p><strong>Interest-Only Monthly Payment:</strong> ₹{{ interest_only_payment }}</p>
+                <p><strong>Regular EMI (Principal + Interest):</strong> ₹{{ emi }}</p>
+                <p><strong>Total Interest (Regular EMI Plan):</strong> ₹{{ total_interest }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
